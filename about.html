@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../FinalProject_Estrera/css/about.css">
+</head>
+<body>
+    
+    <header>
+        <img src="../FinalProject_Estrera/img/logo.jpg" alt="" class="logo">
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../FinalProject_Estrera/index.html">Home</a></li>
+                <li><a href="../FinalProject_Estrera/menu.html">Menu</a></li>
+                <li><a href="#" class="active">About</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Address: 123 Floral Street, Seoul, Korea</p>
+        <p>Phone: (123) 456-7890</p>
+        <form id="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
+A Samgyeopsal restaurant is a dining establishment specializing in Korean-style grilled pork belly, often served unlimited alongside a variety of side dishes (banchan), sauces, and fresh vegetables. Popular for its interactive, cook-at-your-table experience, it caters to groups, families, and food enthusiasts seeking both flavor and fun. In the Philippines, this business thrives due to the growing love for Korean cuisine, the influence of K-culture, and the appeal of affordable, all-you-can-eat dining. Successful operations focus on quality ingredients, efficient service, and a cozy, social atmosphere that keeps customers coming back

@@ -1,0 +1,68 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: #d63384;
+    font-size: 1.1rem;
+    gap: 10px;
+}
+
+a:hover {
+    color: black; /* Darker pink on hover */
+}
+
+a.active {
+    border-bottom: solid 2px #d63384;
+}
+
+/* Header */
+header {
+    background-color: #fce4ec; /* Light pink background */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* .logo-container h1 {
+    display: flex;
+    margin-left: 30px;
+    font-size: 15px;
+} */
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-left: 1rem;
+}
+
+.menu-toggle {
+    display: none;;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
