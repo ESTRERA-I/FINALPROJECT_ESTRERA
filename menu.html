@@ -15,6 +15,7 @@
                 <li><a href="../FinalProject_Estrera/index.html">Home</a></li>
                 <li><a href="#" class="active">Menu</a></li>
                 <li><a href="../FinalProject_Estrera/about.html">About</a></li>
+                <li><a href="../FinalProject_Estrera/form.html">Sign Up</a></li>
             </ul>
         </nav>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -91,15 +92,9 @@
                 <button class="add-to-cart" onclick="addToCart('Shabu-Shabu', 1999)">Add to Cart</button>
             </div>
             <div class="menu-item">
-                <img src="../FinalProject_Estrera/img/shabu2.jpg" alt="Samgyeopsal">
-                <h3>Shabu-Shabu - ₱1999</h3>
-                <p>Inclusions:  <br> Thin Slice Beef - 1000g <br> Shrimp <br> Mussels <br> Tofu <br> Squid Ball/Chicken Ball <br> Fishcake <br> Chinese Cabbage/Cabbage <br> Carrots <br> Onion Rings <br> Radish <br>Yellow Corn <br>Enoki Mushroom </p>
-                <button class="add-to-cart" onclick="addToCart('Shabu-Shabu', 1999)">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../FinalProject_Estrera/img/shabu2.jpg" alt="Samgyeopsal">
-                <h3>Shabu-Shabu - ₱1999</h3>
-                <p>Inclusions:  <br> Thin Slice Beef - 1000g <br> Shrimp <br> Mussels <br> Tofu <br> Squid Ball/Chicken Ball <br> Fishcake <br> Chinese Cabbage/Cabbage <br> Carrots <br> Onion Rings <br> Radish <br>Yellow Corn <br>Enoki Mushroom </p>
+                <img src="../FINALPROJECT_ESTRERA/img/combo.jpg" alt="Samgyeopsal">
+                <h3>Samgyup & Shabu-Shabu - ₱1199 (Package)</h3>
+                <p>Includes grill + Stove + Butane <br>Up to 10 Meats & Side Dishes <br>Fresh & Ready-to-Cook </p>
                 <button class="add-to-cart" onclick="addToCart('Shabu-Shabu', 1999)">Add to Cart</button>
             </div>
         </div>
@@ -113,6 +108,7 @@
                 <h3>Bento Cake Mangga Melt - ₱179</h3>
                 <p>Bento Cake Mangga Melt is a mini-sized cake infused with the tropical sweetness of mango, designed in the charming style of bento cakes. It’s a delightful fusion of soft sponge layers, creamy mango filling, and artistic decoration, perfect for intimate celebrations or gifting.<p>
                 <button class="add-to-cart" onclick="addToCart('Bento Cake Mangga Melt', 179)">Add to Cart</button>
+                
             </div>
             <div class="menu-item">
                 <img src="../FinalProject_Estrera/img/mango.jpg" alt="Bibimbap">
@@ -162,12 +158,12 @@
                 total += item.price;
                 cartItems.innerHTML += `
                     <div class="cart-item">
-                        <span>${item.name} - $${item.price.toFixed(2)}</span>
+                        <span>${item.name} - ₱${item.price.toFixed(2)}</span>
                         <button onclick="removeFromCart(${index})">Remove</button>
                     </div>
                 `;
             });
-            cartItems.innerHTML += `<p>Total: $${total.toFixed(2)}</p>`;
+            cartItems.innerHTML += `<p>Total: ₱${total.toFixed(2)}</p>`;
             document.getElementById('cart-modal').style.display = 'flex';
         }
 
@@ -187,9 +183,9 @@
             let total = 0;
             cart.forEach(item => {
                 total += item.price;
-                checkoutItems.innerHTML += `<p>${item.name} - $${item.price.toFixed(2)}</p>`;
+                checkoutItems.innerHTML += `<p>${item.name} - ₱${item.price.toFixed(2)}</p>`;
             });
-            checkoutItems.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+            checkoutItems.innerHTML += `<p><strong>Total: ₱${total.toFixed(2)}</strong></p>`;
             document.getElementById('cart-modal').style.display = 'none';
             document.getElementById('checkout-form').style.display = 'flex';
         }

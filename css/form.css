@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background-color: lightpink;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0,0,0,5);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: none;
+}
+form.active {
+    display: block;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #45a049;
+}
+.toggle {
+    text-align: center;
+    margin-top: 20px;
+}
+.toggle button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.social-login {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-login:hover {
+    color: none;
+}
+
+.social-login button {
+    width: 30%;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-login .facebook {
+    background-color: #3b5998;
+    color: white;
+}
+.social-login .google {
+    background-color: #db4437;
+    color: white;
+}
+.social-login .apple {
+    background-color: #000000;
+    color: white;
+}
+.social-login button i {
+    margin-right: 8px;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    .social-login button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

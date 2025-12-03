@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../FinalProject_Estrera/css/form.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        
+        <!-- Login Form -->
+        <form id="login-form" class="active">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" placeholder="Enter your email address" required>
+            
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required>
+            
+            <div id="login-error" class="error"></div>
+            <button type="submit"><a href="../FINALPROJECT_ESTRERA/index.html">Login</a></button>
+        </form>
+        
+        <!-- Registration Form -->
+        <form id="register-form">
+            <label for="register-username">Username:</label>
+            <input type="text" id="register-username" placeholder="Make a username" required>
+            
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" placeholder="Enter your email address" required>
+            
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" placeholder="Create a password" required>
+            
+            <label for="register-confirm-password">Confirm Password:</label>
+            <input type="password" id="register-confirm-password" placeholder="Confirm your password" required>
+            
+            <div id="register-error" class="error"></div>
+            <button type="submit">Register</button>
+        </form>
+        
+        <div class="toggle">
+            <span id="toggle-text">Don't have an account? </span>
+            <button id="toggle-btn">Register here</button>
+        </div>
+        <div class="social-login">
+            <button type="button" class="facebook" onclick="alert('Facebook login not implemented')"><i class="fab fa-facebook"></i> Facebook</button>
+            <button type="button" class="google" onclick="alert('Google login not implemented')"><i class="fab fa-google"></i> Google</button>
+            <button type="button" class="apple" onclick="alert('Apple login not implemented')"><i class="fab fa-apple"></i> Apple</button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between login and register forms
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const toggleBtn = document.getElementById('toggle-btn');
+        const toggleText = document.getElementById('toggle-text');
+        const formTitle = document.getElementById('form-title');
+        let isLogin = true;
+
+        toggleBtn.addEventListener('click', function() {
+            if (isLogin) {
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+                formTitle.textContent = 'Register';
+                toggleText.textContent = 'Already have an account? ';
+                toggleBtn.textContent = 'Login here';
+            } else {
+                registerForm.classList.remove('active');
+                loginForm.classList.add('active');
+                formTitle.textContent = 'Login';
+                toggleText.textContent = 'Don\'t have an account? ';
+                toggleBtn.textContent = 'Register here';
+            }
+            isLogin = !isLogin;
+        });
+
+        // Basic validation for login form
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            const errorDiv = document.getElementById('login-error');
+            
+            if (!email || !password) {
+                errorDiv.textContent = 'Please fill in all fields.';
+            } else {
+                // Simulate login (in a real app, this would send to server)
+                alert('Login successful! (This is a demo)');
+                errorDiv.textContent = '';
+            }
+        });
+
+        // Basic validation for register form
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            const errorDiv = document.getElementById('register-error');
+            
+            if (!username || !email || !password || !confirmPassword) {
+                errorDiv.textContent = 'Please fill in all fields.';
+            } else if (password !== confirmPassword) {
+                errorDiv.textContent = 'Passwords do not match.';
+            } else {
+                // Simulate registration (in a real app, this would send to server)
+                alert('Registration successful! (This is a demo)');
+                errorDiv.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
