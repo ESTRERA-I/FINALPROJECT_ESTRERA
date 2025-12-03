@@ -8,22 +8,7 @@ body {
     background-size: cover;
     color: #333;
     line-height: 1.6;
-
-}
-
-a {
-    text-decoration: none;
-    color: #d63384;
-    font-size: 1.1rem;
-    gap: 10px;
-}
-
-a:hover {
-    color: black; /* Darker pink on hover */
-}
-
-a.active {
-    border-bottom: solid 2px #d63384;
+    backdrop-filter: blur(5px);
 }
 
 /* Header */
@@ -34,6 +19,7 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid black;
 }
 
 .logo {
@@ -43,31 +29,48 @@ header {
     margin-left: 10px;
 }
 
-/* .logo-container h1 {
-    display: flex;
-    margin-left: 30px;
-    font-size: 15px;
-} */
-
 nav {
     display: flex;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+#nav-menu ul {
     display: flex;
+    justify-content: space-around; /* Evenly spaces items across the nav */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu li {
+    margin: 0 20px; /* Adds gap/space between each nav item; adjust 20px as needed */
+}
+
+#nav-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #d63384; /* Inherits color from parent */
+}
+
+#nav-menu a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+
+a {
+    text-decoration: none;
+    color: #d63384;
+    font-size: 1.1rem;
+    gap: 10px;
     justify-content: space-between;
 }
 
-nav li {
-    margin-left: 1rem;
+a:hover {
+    color: black; /* Darker pink on hover */
 }
 
-nav ul li a {
-    justify-content: space-between;
-    gap: 7px;
+a.active {
+    border-bottom: solid 2px #d63384;
 }
 
 .menu-toggle {
@@ -76,11 +79,15 @@ nav ul li a {
     cursor: pointer;
 }
 
-
 .cart-icon {
     font-size: 1.5rem;
     cursor: pointer;
     position: relative;
+    margin-right: 10px;
+}
+
+.cart-icon:hover {
+    color: black
 }
 .cart-count {
     position: absolute;
@@ -92,6 +99,7 @@ nav ul li a {
     padding: 0.2rem 0.4rem;
     font-size: 0.8rem;
 }
+
 
 
 /* Cart Modal */
@@ -133,6 +141,7 @@ nav ul li a {
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 .checkout-btn {
@@ -156,7 +165,6 @@ nav ul li a {
 .C-checkout {
     margin-top: 10px;
 }
-
 
 /* Checkout Form */
 
@@ -202,6 +210,7 @@ nav ul li a {
     padding: 0.5rem;
     border-radius: 4px;
     cursor: pointer;
+    padding-bottom: 20px;
 }
 
 .checkout-form button:hover {
@@ -209,6 +218,8 @@ nav ul li a {
 }
 
 /* Sections */
+
+
 section {
     padding: 2rem;
     max-width: 1200px;
@@ -219,6 +230,10 @@ section {
     margin-bottom: 2rem;
 }
 
+.menu h2 {
+    color: black;
+    font-size: 30px;
+}
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -288,6 +303,7 @@ footer {
     background-color: #fce4ec;
     text-align: center;
     padding: 1rem;
+    border-top: 2px;
 }
 
 /* Responsive */
@@ -306,15 +322,25 @@ footer {
     }
     nav li {
         margin: 0.5rem 0;
+        gap: 5px;
     }
     .menu-toggle {
-        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
-    .hero h1 {
+    
+    .intro h1 {
         font-size: 2rem;
     }
-    .hero p {
+    .intro p {
         font-size: 1rem;
+    }
+    .intro {
+        height: 500px;
+    }
+    .bodi img {
+        height: 140px;
+        width: 150px;
     }
     .close-btn {
     margin-top: 10px;

@@ -7,21 +7,6 @@ body {
     line-height: 1.6;
 }
 
-a {
-    text-decoration: none;
-    color: #d63384;
-    font-size: 1.1rem;
-    gap: 10px;
-}
-
-a:hover {
-    color: black; /* Darker pink on hover */
-}
-
-a.active {
-    border-bottom: solid 2px #d63384;
-}
-
 /* Header */
 header {
     background-color: #fce4ec; /* Light pink background */
@@ -30,6 +15,7 @@ header {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 2px solid black;
 }
 
 .logo {
@@ -39,26 +25,48 @@ header {
     margin-left: 10px;
 }
 
-/* .logo-container h1 {
-    display: flex;
-    margin-left: 30px;
-    font-size: 15px;
-} */
-
 nav {
     display: flex;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+#nav-menu ul {
     display: flex;
+    justify-content: space-around; /* Evenly spaces items across the nav */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav-menu li {
+    margin: 0 20px; /* Adds gap/space between each nav item; adjust 20px as needed */
+}
+
+#nav-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #d63384; /* Inherits color from parent */
+}
+
+#nav-menu a i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+
+a {
+    text-decoration: none;
+    color: #d63384;
+    font-size: 1.1rem;
+    gap: 10px;
     justify-content: space-between;
 }
 
-nav li {
-    margin-left: 1rem;
+a:hover {
+    color: black; /* Darker pink on hover */
+}
+
+a.active {
+    border-bottom: solid 2px #d63384;
 }
 
 .menu-toggle {
@@ -236,6 +244,11 @@ nav li {
     z-index: 1;
 }
 
+.intro-content h1 {
+    font-size: 2rem;
+    color: whitesmoke;
+}
+
 .intro h1 {
     font-size: 3rem;
     margin: 0;
@@ -252,28 +265,90 @@ nav li {
     max-width: 1200px;
     margin: 0 auto;
     border: solid 2px black;
-    background-color: #d63384;
+    background-color: #fce4ec;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .bodi img {
-    height: 500px;
-    width: 500px;
-    display: flex;
+    height: 250px;
+    width: 250px;
     transition: 1s;
+    margin-bottom: 15px;
 }
-
 .bodi img:hover {
     transform: scale(1.1);
     z-index: 1; 
 }
+.image{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 10px;
+}
+.bodi-content {
+    display: flex;
+    justify-content: space-around;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    font-size: 15px;
+}
 
-/* Footer */
+
+.add-to-cart {
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.add-to-cart:hover {
+    background-color: #a61e4d;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+input, textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a61e4d;
+}
+
+
+/* footer */
 footer {
     background-color: #fce4ec;
+    color: black;
     text-align: center;
     padding: 1rem;
+    margin-top: 20px;
+    margin-bottom: auto 0;
+    border-top: 2px solid black;
 }
 
 /* Responsive */
@@ -298,6 +373,7 @@ footer {
         display: flex;
         justify-content: flex-end;
     }
+    
     .intro h1 {
         font-size: 2rem;
     }
@@ -305,7 +381,7 @@ footer {
         font-size: 1rem;
     }
     .intro {
-        height: auto;
+        height: 500px;
     }
     .bodi img {
         height: 140px;
